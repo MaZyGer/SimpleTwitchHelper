@@ -8,11 +8,11 @@ namespace SimpleTwitchHelper
 {
     public class Globals
     {
-        public const string CreateAuthKeyLink = "https://twitch.michael-lohr.net/sth";
+        public const string CreateAuthKeyLink = "https://api.twitch.tv/kraken/oauth2/authorize?response_type=token&client_id=57v1e4qxkot0zyw5kxannrhabp95pnf&redirect_uri=http://localhost&scope=viewing_activity_read+user_read+channel_read+channel_editor&state=c3ab8aa609ea11e793ae92361f002671";
         public const string TwitchLink = "http://www.twitch.tv/";
         public const string TweetLink = "https://twitter.com/intent/tweet?text=";
         public const string ChatPopupUrl = "http://www.twitch.tv/{0}/chat?popout=";
-        public const string ClientId = "mghb8yk4nts6btvb56d65n3wknryalg";
+        public const string ClientId = "57v1e4qxkot0zyw5kxannrhabp95pnf";
         public const int PullDataRate = 10;
 
         public static readonly string AppdataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
