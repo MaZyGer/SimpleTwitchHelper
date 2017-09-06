@@ -208,6 +208,7 @@ namespace SimpleTwitchHelper.Windows
             Globals.Status.StreamTitle = StreamTitleBox.Text;
             Globals.Status.Game = GameNameBox.Text;
             Globals.Client.Update(StreamTitleBox.Text, GameNameBox.Text);
+            
             Globals.Logger.Log("Updated title and game.");
         }
 
@@ -284,7 +285,7 @@ namespace SimpleTwitchHelper.Windows
             catch (Exception e)
             {
                 MessageBox.Show("Error executing " + path + ":\n" + e.Message);
-                Globals.Logger.Log("Error executing " + path + ": " + e.Message, LogType.Error);
+                Globals.Logger.Log("Error executing " + path + ": " + e.Message, "", LogType.Error);
             }
         }
 
@@ -358,7 +359,7 @@ namespace SimpleTwitchHelper.Windows
             Globals.Logger.Log("Triggered Commercial! Length: " + length);
             if (resp.GetState() != TwitchCSharp.Enums.State.success)
             {
-                Globals.Logger.Log(resp.Message, LogType.Warning);
+                Globals.Logger.Log(resp.Message, "",LogType.Warning);
             }
         }
 
