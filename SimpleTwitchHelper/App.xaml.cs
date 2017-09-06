@@ -112,7 +112,7 @@ namespace SimpleTwitchHelper
 
         public bool Login(string authkey)
         {
-            var tempClient = new TwitchAuthenticatedClient(authkey, Globals.ClientId);
+            var tempClient = new TwitchAuthenticatedClient(Globals.ClientId, authkey);
             var user = tempClient.GetMyUser();
 
             if (user == null || IsNullOrWhiteSpace(user.Name))
@@ -160,7 +160,7 @@ namespace SimpleTwitchHelper
                 catch (Exception e)
                 {
                     MSG.Show("Error executing " + s + ":\n" + e.Message);
-                    Globals.Logger.Log("Error executing " + s + ": " + e.Message, LogType.Error);
+                    Globals.Logger.Log("Error executing " + s + ": " + e.Message, "", LogType.Error);
                 }
             }
         }
@@ -203,6 +203,7 @@ namespace SimpleTwitchHelper
                 {
                     if (response.ChatterCount != null)
                         Globals.Status.Chatters = response.ChatterCount;
+
                     var cht = response.Chatters;
                     var chatterList = new List<string>();
                     chatterList.AddRange(cht.AdminList);
