@@ -22,10 +22,12 @@ namespace SimpleTwitchHelper
 
             if (string.IsNullOrWhiteSpace(textBox.Text))
             {
+                // Don't know. Makes no sense.
                 //foreach (var ent in Globals.Logger.log)
                 //{
                 //    textBox.Text += ent + Environment.NewLine;
                 //}
+                textBox.Text += entry + Environment.NewLine;
             }
             else
             {
